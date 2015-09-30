@@ -1,0 +1,2 @@
+AWS SDK for PHP - Version 3 Upgrade Bridge
+Copyright 2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
