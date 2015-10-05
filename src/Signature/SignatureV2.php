@@ -15,7 +15,7 @@ class SignatureV2 implements SignatureInterface
         RequestInterface $request,
         CredentialsInterface $credentials
     ) {
-        parse_str($request->getBody(), $params);
+        $params = Psr7\parse_query($request->getBody());
         $params['Timestamp'] = gmdate('c');
         $params['SignatureVersion'] = '2';
         $params['SignatureMethod'] = 'HmacSHA256';

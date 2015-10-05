@@ -35,6 +35,26 @@ class SignatureV2Test extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, Psr7\str($result));
     }
 
+    public function testCanSignBodyWithStructureShapes()
+    {
+        $_SERVER['aws_time'] = 'Fri, 09 Sep 2011 23:36:00 GMT';
+        $request = new Request(
+            'POST',
+            'http://foo.com',
+            ['Content-Type' => 'application/x-www-form-urlencoded'],
+            'Test=123&Other=456&Nested.1.Name=foo&Nested.1.Value=bar'
+        );
+        $c = new Credentials(self::DEFAULT_KEY, self::DEFAULT_SECRET, 'foo');
+        $sig = new SignatureV2();
+        $result = $sig->signRequest($request, $c);
+
+        $expected = "POST / HTTP/1.1\r\n"
+            . "Host: foo.com\r\n"
+            . "Content-Type: application/x-www-form-urlencoded\r\n\r\n"
+            . "Test=123&Other=456&Nested.1.Name=foo&Nested.1.Value=bar&Timestamp=Fri%2C+09+Sep+2011+23%3A36%3A00+GMT&SignatureVersion=2&SignatureMethod=HmacSHA256&AWSAccessKeyId=AKIDEXAMPLE&SecurityToken=foo&Signature=MbXBpe7leHe6O49B0CU86h%2By0GKFfQ9rBVCNvQWQlB0%3D";
+        $this->assertEquals($expected, Psr7\str($result));
+    }
+
     /**
      * @expectedException \BadMethodCallException
      */
