@@ -1,11 +1,4 @@
 {
-    "importexport": {
-        "namespace": "ImportExport",
-        "versions": {
-            "latest": "2010-06-01",
-            "2010-06-01": "2010-06-01"
-        }
-    },
     "sdb": {
         "namespace": "SimpleDb",
         "versions": {

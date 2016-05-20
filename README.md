@@ -5,10 +5,9 @@
 [![Apache 2 License](https://img.shields.io/packagist/l/aws/aws-sdk-php-v3-bridge.svg?style=flat)](http://aws.amazon.com/apache-2-0/)
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/aws/aws-sdk-php?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-This package provides support for using Amazon SimpleDB and Amazon Import/Export
-with version 3 of the AWS SDK for PHP. It depends on the AWS SDK for PHP v3 and
-allows users to construct SimpleDb and Import/Export clients as they would any
-other v3 service:
+This package provides support for using Amazon SimpleDB with version 3 of the
+AWS SDK for PHP. It depends on the AWS SDK for PHP v3 and allows users to
+construct SimpleDb clients as they would any other v3 service:
 ```php
 <?php
 
@@ -20,8 +19,8 @@ $sdb = new \Aws\SimpleDb\SimpleDbClient([
 $domains = $sdb->listDomains();
 ```
 
-Please note that you cannot use the `Aws\Sdk` service locator with SimpleDb or
-Import/Export. You must create clients using the `new` keyword.
+Please note that you cannot use the `Aws\Sdk` service locator with SimpleDb.
+You must create clients using the `new` keyword.
 
 ## Installation
 
@@ -31,7 +30,7 @@ This package can be installed via [Composer](http://getcomposer.org) by requirin
 ```json
 {
     "require": {
-        "aws/aws-sdk-php-v3-bridge": "~1.0"
+        "aws/aws-sdk-php-v3-bridge": "^0.2.0"
     }
 }
 ```
