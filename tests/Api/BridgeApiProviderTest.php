@@ -7,6 +7,5 @@ class BridgeApiProviderTest extends \PHPUnit_Framework_TestCase
     {
         $p = BridgeApiProvider::defaultProvider();
         $this->assertArrayHasKey('sdb', $this->readAttribute($p, 'manifest'));
-        $this->assertArrayHasKey('importexport', $this->readAttribute($p, 'manifest'));
     }
 }

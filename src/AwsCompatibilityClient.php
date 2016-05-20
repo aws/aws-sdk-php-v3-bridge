@@ -9,7 +9,6 @@ class AwsCompatibilityClient extends AwsClient
 {
     private static $compatibilityServices = [
         'simpledb' => 'sdb',
-        'importexport' => 'importexport'
     ];
 
     public static function getArguments()
@@ -26,7 +25,8 @@ class AwsCompatibilityClient extends AwsClient
     public function __construct(array $args)
     {
         parent::__construct($args + [
-            'service' => $this->getService()
+            'service' => $this->getService(),
+            'signature_version' => 'v2',
         ]);
     }
 
