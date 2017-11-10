@@ -30,7 +30,7 @@
         "aws/aws-sdk-php": "^3.18.7"
     },
     "require-dev": {
-        "phpunit/phpunit": "^4.8",
+        "phpunit/phpunit": "^4.8.35",
         "behat/behat": "^3.0"
     }
 }

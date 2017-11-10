@@ -5,8 +5,9 @@ use Aws\Signature\AnonymousSignature;
 use Aws\Signature\S3SignatureV4;
 use Aws\Signature\SignatureV2;
 use Aws\Signature\SignatureV4;
+use PHPUnit\Framework\TestCase;
 
-class AwsCompatibilityClientTest extends \PHPUnit_Framework_TestCase
+class AwsCompatibilityClientTest extends TestCase
 {
     /**
      * @dataProvider signatureVersionProvider
