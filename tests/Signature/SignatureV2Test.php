@@ -6,11 +6,12 @@ require_once __DIR__ . '/sig_hack.php';
 use Aws\Credentials\Credentials;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @covers Aws\Signature\SignatureV2
  */
-class SignatureV2Test extends \PHPUnit_Framework_TestCase
+class SignatureV2Test extends TestCase
 {
     const DEFAULT_KEY = 'AKIDEXAMPLE';
     const DEFAULT_SECRET = 'wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY';
