@@ -46,7 +46,8 @@ class SignatureV2 implements SignatureInterface
     public function presign(
         RequestInterface $request,
         CredentialsInterface $credentials,
-        $expires
+        $expires,
+        array $options = []
     ) {
         throw new \BadMethodCallException(__METHOD__ . ' not implemented');
     }

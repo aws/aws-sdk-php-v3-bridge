@@ -27,7 +27,7 @@
         "classmap": ["build/"]
     },
     "require": {
-        "aws/aws-sdk-php": "^3.18.7"
+        "aws/aws-sdk-php": "^3.105.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8",
