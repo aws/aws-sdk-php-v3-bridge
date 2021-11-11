@@ -15,7 +15,7 @@ class SignatureV2 implements SignatureInterface
         RequestInterface $request,
         CredentialsInterface $credentials
     ) {
-        $params = Psr7\parse_query($request->getBody());
+        $params = Psr7\Query::parse($request->getBody());
         $params['Timestamp'] = gmdate('c');
         $params['SignatureVersion'] = '2';
         $params['SignatureMethod'] = 'HmacSHA256';
@@ -40,7 +40,7 @@ class SignatureV2 implements SignatureInterface
             )
         );
 
-        return $request->withBody(Psr7\stream_for(http_build_query($params)));
+        return $request->withBody(Psr7\Utils::streamFor(http_build_query($params)));
     }
 
     public function presign(
